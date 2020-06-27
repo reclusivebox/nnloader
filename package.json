@@ -1,6 +1,6 @@
 {
   "name": "simpleloader",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A small library to load files from the package folder.",
   "main": "dist/simpleloader.js",
   "repository": "https://github.com/reclusivebox/simpleloader.git",
