@@ -6,11 +6,13 @@ module.exports = {
   output: {
     filename: 'simpleloader.js',
     path: path.join(__dirname, 'dist'),
+    library: 'simpleloader',
+    libraryTarget: 'umd',
+    libraryExport: 'default',
   },
   resolve: {
     extensions: ['.ts', '.js'],
   },
-  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -27,4 +29,5 @@ module.exports = {
       out: 'simpleloader.d.ts',
     }),
   ],
+  target: 'node',
 };
