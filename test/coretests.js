@@ -1,5 +1,5 @@
 const assert = require('chai').assert;
-const simpleloader = require('../dist/simpleloader');
+const simpleloader = require('../dist/nnloader');
 const path = require('path');
 
 describe('Find the package directory from different places', () => {

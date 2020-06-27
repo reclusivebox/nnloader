@@ -4,9 +4,9 @@ const DtsBundler = require('dts-bundle-webpack');
 module.exports = {
   entry: './src/index.ts',
   output: {
-    filename: 'simpleloader.js',
+    filename: 'nnloader.js',
     path: path.join(__dirname, 'dist'),
-    library: 'simpleloader',
+    library: 'nnloader',
     libraryTarget: 'umd',
     libraryExport: 'default',
   },
@@ -23,10 +23,10 @@ module.exports = {
   },
   plugins: [
     new DtsBundler({
-      name: 'simpleloader',
+      name: 'nnloader',
       main: 'lib/index.d.ts',
       baseDir: 'dist',
-      out: 'simpleloader.d.ts',
+      out: 'nnloader.d.ts',
     }),
   ],
   target: 'node',
