@@ -1,8 +1,8 @@
-# SimpleLoader
+# nnLoader
 
 ## What it does?
 
-    This is a small library to load static files from your package root.
+    The name nnLoader stands for 'no nonsense loader'. This is a small library to load static files from your package root. It aims to be as simple as possible.
 
 ## Why create a library for this?
 
@@ -12,7 +12,7 @@
 
     Right now there are two major limitations:
 
-1. I have no good way deal with your package directory if you don't provide me a tip, right now the functions in the library take a parameter called `moduleDir`, you should aways pass the node variable `__dirname` to this parameter. Even across different nested files the library can find your package root if you pass this information.
+1. I have no good way deal with your package directory if you don't provide me a tip, right now the functions in the library take a parameter called `moduleDir`, you should always pass the node variable `__dirname` to this parameter. Even across different nested files the library can find your package root if you pass this information.
 
 2. There are many types of files, and should be a good idea to integrate some loaders to the library. Right now the library can only give you strings.
 
@@ -20,15 +20,15 @@
 
     With three simple fast steps:
 
-1. Install the package: `yarn add simpleloader` or `npm i simpleloader`.
+1. Install the package: `yarn add nnloader` or `npm i nnloader`.
 
-2. Import the package: `const simpleloader = require('simpleloader')` or `import simpleloader from 'simpleloader'`.
+2. Import the package: `const nnloader = require('nnloader')` or `import nnloader from 'nnloader'`.
 
 3. Call one of the functions:
 
 ```javascript
 // This function gives you a string with the contents of the file.
-const configString = await simpleloader.loadString(
+const configString = await nnloader.loadString(
     'configs/global.yaml', // The file you want to load
     __dirname, // This is the moduleDir
     'utf-8' /* This is optional, it sets the encoding option
@@ -36,5 +36,3 @@ const configString = await simpleloader.loadString(
             */
 );
 ```
-
-
