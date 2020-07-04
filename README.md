@@ -14,7 +14,7 @@
 
 1. I have no good way deal with your package directory if you don't provide me a tip, right now the functions in the library take a parameter called `moduleDir`, you should always pass the node variable `__dirname` to this parameter. Even across different nested files the library can find your package root if you pass this information.
 
-2. There are many types of files, and should be a good idea to integrate some loaders to the library. Right now the library can only give you strings.
+2. There are many types of files, and should be a good idea to integrate some loaders into the library.
 
 ## How do I use it?
 
@@ -36,3 +36,5 @@ const configString = await nnloader.loadString(
             */
 );
 ```
+
+More information can be found at: https://reclusivebox.github.io/nnloader/
