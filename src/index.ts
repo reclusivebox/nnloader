@@ -1,5 +1,5 @@
-import * as commons from './common';
+import {getPackageDir} from './common';
 import {loadString} from './stringLoader';
 import {loadJSON} from './jsonLoader';
 
-export default {commons, loadString, loadJSON};
+export default {getPackageDir, loadString, loadJSON};
