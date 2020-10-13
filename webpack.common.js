@@ -6,9 +6,7 @@ module.exports = {
   output: {
     filename: 'nnloader.js',
     path: path.join(__dirname, 'dist'),
-    library: 'nnloader',
-    libraryTarget: 'umd',
-    libraryExport: '',
+    libraryTarget: 'commonjs'
   },
   resolve: {
     extensions: ['.ts', '.js'],

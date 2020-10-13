@@ -1,5 +1,6 @@
 import {assert} from 'chai';
 import nnloader from '../dist/nnloader';
+import {describe, it} from 'mocha';
 
 describe('Testing the json module', () => {
   it('Load /test/test.json', async () => {
