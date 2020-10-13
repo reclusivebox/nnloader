@@ -1,6 +1,6 @@
 {
   "name": "nnloader",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A small library to load files from the package folder.",
   "main": "dist/nnloader.js",
   "repository": "https://github.com/reclusivebox/nnloader.git",
