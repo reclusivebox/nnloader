@@ -1,6 +1,7 @@
 import {assert} from 'chai';
 import nnloader from '../dist/index';
 import path from 'path';
+import {describe, it} from 'mocha';
 
 describe('Find the package directory from different places', () => {
   it('Find the package directory from here.', async () => {
