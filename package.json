@@ -1,8 +1,9 @@
 {
   "name": "nnloader",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "A small library to load files from the package folder.",
-  "main": "dist/nnloader.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/reclusivebox/nnloader.git",
   "author": "The Reclusive One <reclusivebox@outlook.com>",
   "license": "MIT",
@@ -15,16 +16,13 @@
     "@typescript-eslint/eslint-plugin": "^3.4.0",
     "@typescript-eslint/parser": "^3.4.0",
     "chai": "^4.2.0",
-    "dts-bundle-webpack": "^1.0.2",
     "eslint": "^7.3.1",
     "eslint-config-google": "^0.14.0",
     "mocha": "^8.0.1",
-    "ts-loader": "^7.0.5",
+    "rollup": "^2.33.1",
+    "rollup-plugin-typescript2": "^0.29.0",
     "ts-node": "^8.10.2",
-    "typescript": "^3.9.5",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-merge": "^4.2.2"
+    "typescript": "^3.9.5"
   },
   "scripts": {
     "build": "./scripts/build.sh",
