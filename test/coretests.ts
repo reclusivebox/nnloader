@@ -1,5 +1,5 @@
 import {assert} from 'chai';
-import nnloader from '../dist/nnloader';
+import nnloader from '../dist/index';
 import path from 'path';
 
 describe('Find the package directory from different places', () => {

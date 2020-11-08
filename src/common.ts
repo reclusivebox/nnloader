@@ -5,14 +5,24 @@ import {promises as fs} from 'fs';
  * Error that hapens when you use this library outside a package scope.
  */
 export class NoPackageError extends Error {
-  message: string = 'No package.json file found.';
+  /**
+   * Class Constructor.
+   */
+  constructor() {
+    super('No package.json file found.');
+  }
 }
 
 /**
  * Error that hapens when you don't pass a valid path to the library.
  */
 export class InvalidPathError extends Error {
-  message: string = 'A valid path must be provided, ex: assets/config.json';
+  /**
+   * Class Constructor.
+   */
+  constructor() {
+    super('A valid path must be provided, ex: assets/config.json');
+  }
 }
 
 export type EncodingOptions = 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' |
@@ -20,11 +30,14 @@ export type EncodingOptions = 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' |
 
 /**
  * Returns the absolute path to the directory containing the package.json file.
- * @param {string} dirname - The directory containing the file calling this function, aways use the node variable __diname.
+ * @param {string} dirname - The directory containing the file calling this
+ *  function, aways use the node variable __diname.
  */
 export async function getPackageDir(dirname: string): Promise<string> {
   // Check for nullish dirname
-  dirname ?? (() => {throw new InvalidPathError()})()
+  dirname ?? (() => {
+    throw new InvalidPathError();
+  })();
 
   // Check if we reached the end of the filesystem
   if (dirname === '/') {
@@ -34,8 +47,8 @@ export async function getPackageDir(dirname: string): Promise<string> {
   const files: Array<string> = await fs.readdir(dirname);
 
   if (files.includes('package.json')) {
-    return dirname
+    return dirname;
   } else {
-    return await getPackageDir(path.resolve(dirname + '/..'))
+    return await getPackageDir(path.resolve(dirname + '/..'));
   }
 }
