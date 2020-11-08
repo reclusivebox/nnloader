@@ -1,3 +1,3 @@
 #!/bin/sh
 
-npx webpack --config webpack.development.js
+rollup -c rollup.config.js
