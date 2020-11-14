@@ -13,7 +13,7 @@ describe('Testing the json module', () => {
       },
     };
 
-    const libAnswer = await nnloader.loadJSON('/test/test.json', __dirname);
+    const libAnswer = await nnloader.loadJSON('/test/test.json');
 
     assert.deepStrictEqual(correctAnswer, libAnswer);
   });

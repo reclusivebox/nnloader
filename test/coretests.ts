@@ -12,7 +12,7 @@ describe('Find the package directory from different places', () => {
   it('Load a file from the this folder.', async () => {
     const message = await nnloader.loadString(
         'test/textfile.txt',
-        __dirname);
+    );
     assert.equal(message, 'Hello World\n');
   });
 });
