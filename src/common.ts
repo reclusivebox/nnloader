@@ -25,6 +25,18 @@ export class InvalidPathError extends Error {
   }
 }
 
+/**
+ * Error that happens when you call the module from an untraceable source.
+ */
+export class InvalidCallerError extends Error {
+  /**
+   * Class Constructor
+   */
+  constructor() {
+    super('You called the module from an invalid source.');
+  }
+}
+
 export type EncodingOptions = 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' |
   'ucs-2' | 'base64' | 'latin1' | 'binary' | 'hex';
 
@@ -51,4 +63,35 @@ export async function getPackageDir(dirname: string): Promise<string> {
   } else {
     return await getPackageDir(path.resolve(dirname + '/..'));
   }
+}
+
+/**
+ * A function that tells you where the module is being called from.
+ * @param {number} toIgnore - The number of stack members to ignore.
+ * @return {string} - The caller's source dir.
+ */
+export function getCallerDir(toIgnore = 2) {
+  let rawStack: string;
+
+  try {
+    throw new Error();
+  } catch (someError) {
+    rawStack = someError.stack;
+  }
+
+  const regex = /at (?<caller>\S+) \((?<path>.+):\d+:\d+\)/gm;
+  const matches = Array.from(rawStack.matchAll(regex));
+
+  const pathRegex = /^\/(?<fullPath>.+\/)/;
+  const validPaths = matches
+      .filter((item) => pathRegex.test(item.groups?.path ?? 'invalid'))
+      .map((item) => {
+        return (
+          '/' + item.groups?.path?.match(pathRegex)?.groups?.fullPath ?? ''
+        );
+      });
+
+  return validPaths[toIgnore] ?? (() => {
+    throw new InvalidCallerError();
+  });
 }
