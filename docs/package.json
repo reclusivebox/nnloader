@@ -1,0 +1,79 @@
+{
+  "name": "gatsby-starter-default",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "version": "0.1.0",
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "dependencies": {
+    "@types/prismjs": "^1.16.2",
+    "@types/react-helmet": "^6.1.0",
+    "babel-preset-react-app": "^10.0.0",
+    "gatsby": "^2.25.3",
+    "gatsby-image": "^2.4.21",
+    "gatsby-plugin-manifest": "^2.5.2",
+    "gatsby-plugin-offline": "^3.3.3",
+    "gatsby-plugin-react-helmet": "^3.4.0",
+    "gatsby-plugin-sass": "^2.5.1",
+    "gatsby-plugin-sharp": "^2.7.1",
+    "gatsby-plugin-typescript": "^2.6.0",
+    "gatsby-plugin-typescript-checker": "^1.1.1",
+    "gatsby-remark-prismjs": "^3.7.0",
+    "gatsby-source-filesystem": "^2.5.0",
+    "gatsby-transformer-remark": "^2.10.0",
+    "gatsby-transformer-sharp": "^2.5.21",
+    "grommet": "^2.15.2",
+    "grommet-icons": "^4.5.0",
+    "postcss-loader": "^4.0.4",
+    "prismjs": "^1.22.0",
+    "prop-types": "^15.7.2",
+    "qrcode.react": "^1.0.0",
+    "raw-loader": "^4.0.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0",
+    "sass": "^1.29.0",
+    "sass-loader": "^10.1.0",
+    "styled-components": "^5.2.1",
+    "tailwindcss": "^1.9.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/react": "^6.0.28",
+    "@types/jest": "^26.0.16",
+    "@types/qrcode.react": "^1.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
+    "babel-loader": "^8.2.1",
+    "eslint": "^7.15.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.21.5",
+    "jest": "^26.6.3",
+    "react-is": "^17.0.1",
+    "source-map-support": "^0.5.19",
+    "ts-jest": "^26.4.4"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "0BSD",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "jest",
+    "storybook": "start-storybook -p 6006 --no-dll",
+    "build-storybook": "build-storybook --no-dll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}

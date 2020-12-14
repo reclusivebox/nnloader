@@ -1,0 +1,68 @@
+@import '../../node_modules/tailwindcss/base.css';
+@import '../../node_modules/tailwindcss/components.css';
+@import '../../node_modules/tailwindcss/utilities.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    p {
+        padding: 1em;
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    p::first-letter {
+        margin-left: 4em;
+    }
+
+    // body {
+    //     width: 100vw;
+    // }
+
+    h1, h2, h3, h4, h5, h6 {
+        padding: 1em;
+        @apply font-extrabold;
+    }
+
+    h1 {
+        @apply text-4xl;
+    }
+
+    h2 {
+        @apply text-3xl;
+    }
+
+    h3 {
+        @apply text-2xl;
+    }
+
+    h4 {
+        @apply text-xl;
+    }
+
+    h5 {
+        @apply text-lg;
+    }
+
+    ol {
+        padding: 1rem;
+        counter-reset: items 0;
+
+        li::before {
+            content: counter(items) ". ";
+            counter-increment: items;
+            @apply font-bold;
+        }
+
+        li {
+            margin: 0.5em 1em 0.5em 4em;
+        }
+    }
+}
+
+$lighterRed: #f44336;
+$darkerRed: #d32f2f;
+$lighterGreen: #8bc34a;
+$darkerGreen: #689f38;

@@ -1,0 +1,25 @@
+@use './base.scss' as Base;
+@import "../../node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css";
+@import "../../node_modules/prismjs/themes/prism.css";
+
+$coyBackground: #F5F8FB;
+$tomorrowBackground: #2D2D2D;
+$defaultBackground: #F5F2F0;
+
+$currentBackground: $defaultBackground;
+
+.gatsby-highlight {
+    background-color: $currentBackground;
+    // border-radius: 1.2rem;
+    margin: 1em;
+    padding: 1em;
+    border-left: solid Base.$lighterGreen 0.5rem;
+    overflow: auto;
+
+    pre[class*="language-"].line-numbers {
+        padding: 0;
+        padding-left: 2.8em;
+        overflow: initial;
+        background-color: $currentBackground;
+    }
+}

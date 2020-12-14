@@ -1,0 +1,16 @@
+@use './base.scss' as Base;
+
+.homePageCard {
+    @screen lg {
+        min-width: max-content;
+        // width: 40%
+    }
+    h6 {
+        color: #666666;
+    }
+    transition: transform 0.3s;
+}
+
+.homePageCard:hover {
+    transform: scale(1.05, 1.05);
+}

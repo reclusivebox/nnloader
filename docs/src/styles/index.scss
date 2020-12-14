@@ -1,0 +1,32 @@
+@use './base.scss' as Base;
+
+.codeBox {
+    width: min-content;
+    padding: 1rem;
+    border-left: solid Base.$lighterGreen 0.5rem;
+}
+
+.cardContainer {
+    transition: transform 0.5s;
+}
+
+.cardContainer:hover {
+    transform: scale(1.05, 1.05);
+
+    @screen lg {
+        transform: scale(1.1, 1.1);
+    }
+}
+
+.moneyButton {
+    width: 25em;
+}
+
+.pageGrid {
+    display: grid;
+    grid-template:
+        "examplesHeader"
+        "examples"
+        "cardHeaders"
+        "cards" / 100%;
+}
