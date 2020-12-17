@@ -1,3 +1,4 @@
+import { string } from 'prop-types';
 import React, {useEffect, useState} from 'react';
 
 export class ResponsiveWatcher {
@@ -37,7 +38,9 @@ export class ResponsiveWatcher {
 }
 
 const defaultWatcher: any = (typeof window !== 'undefined')? new ResponsiveWatcher(): '';
+// const watchers: Map<string, ResponsiveWatcher> = new Map();
 
+// Modificar o código abaixo para funcionar na hipótese do objeto window sumir
 export function useResponsiveWatcher(customWatcher?: ResponsiveWatcher): boolean {
     if(typeof window !== 'undefined') {
       const watcher = customWatcher ?? defaultWatcher;

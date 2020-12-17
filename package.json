@@ -29,6 +29,7 @@
   "scripts": {
     "build": "./scripts/build.sh",
     "deploy": "./scripts/deploy.sh",
+    "ghpages": "./scripts/ghpages.sh",
     "test": "./scripts/test.sh"
   },
   "files": [
