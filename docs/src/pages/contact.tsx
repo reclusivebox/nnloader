@@ -6,8 +6,10 @@ import {Linkedin, Send as Telegram, Chat as Whatsapp, Mail, Icon} from 'grommet-
 import Base from '../templates/base';
 
 import '../styles/contact.scss';
-import info from '../other/ProjectInfo.json';
-import avatar from '../images/Avatar.jpg';
+// import info from '../other/ProjectInfo.json';
+const {default: info} = require('../other/ProjectInfo.json');
+// import avatar from '../images/Avatar.jpg';
+const avatar = require('../images/Avatar.jpg');
 
 function ContactButton(props: React.PropsWithChildren<{
   label: string,

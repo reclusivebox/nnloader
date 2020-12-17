@@ -10,7 +10,7 @@ export default {
 export function debugMode() {
   return (
     <>
-      <DynamicTopBar debug={true} />
+      <DynamicTopBar />
       <div style={{height: '200vh'}} />
     </>
   );

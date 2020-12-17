@@ -8,7 +8,7 @@ const theme = require('../other/grommetTheme.json');
 
 import '../styles/baseTemplate.scss';
 
-export default function BaseTemplate({children}) {
+export default function BaseTemplate({children}: React.PropsWithChildren<{}>) {
   return (
     <Grommet theme={theme} themeMode="light">
       <HeaderBar />

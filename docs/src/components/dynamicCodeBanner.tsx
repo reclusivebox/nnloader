@@ -12,7 +12,7 @@ import '../styles/codeHighlight.scss';
 export default function DynamicCodeBanner(
     props: React.PropsWithChildren<{
     codeList: string[],
-    className: string,
+    className?: string,
     ms?: number,
     }>,
 ) {
