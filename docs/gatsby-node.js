@@ -34,4 +34,19 @@ async function createPages({graphql, actions}) {
   );
 }
 
+function onCreateWebpackConfig({stage, loaders, actions}) {
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /responsiveWatcher\.js/,
+            use: [loaders.null()],
+          },
+        ],
+      },
+    })
+  }
+}
+
 module.exports = {createPages};

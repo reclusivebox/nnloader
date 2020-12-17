@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  pathPrefix: '/nnloader',
   siteMetadata: {
     title: `nnLoader`,
     description: `The no-nonsense file loader.`,

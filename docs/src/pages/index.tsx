@@ -5,7 +5,8 @@ import {Link} from 'gatsby';
 import {Github, Money, Link as LinkIcon} from 'grommet-icons';
 import QRCode from 'qrcode.react';
 
-import {useResponsiveWatcher} from '../utils/responsiveWatcher';
+// import {useResponsiveWatcher} from '../utils/responsiveWatcher';
+const ResponsiveWatcher = require('../utils/responsiveWatcher');
 
 import MarkdownCode from '../components/markdownCode';
 import {HomePageCard, CardButton} from '../components/homePageCard';
@@ -13,10 +14,14 @@ import {CopyButton} from '../components/copyButton';
 
 import '../styles/index.scss';
 
-import stringExample from '!!raw-loader!../../examples/string.js';
-import bufferExample from '!!raw-loader!../../examples/buffer.js';
-import jsonExample from '!!raw-loader!../../examples/json.js';
-import links from '../other/ProjectInfo.json';
+// import stringExample from '!!raw-loader!../../examples/string.js';
+const {default: stringExample} = require('!!raw-loader!../../examples/string.js');
+// import bufferExample from '!!raw-loader!../../examples/buffer.js';
+const {default: bufferExample} = require('!!raw-loader!../../examples/buffer.js');
+// import jsonExample from '!!raw-loader!../../examples/json.js';
+const {default: jsonExample} = require('!!raw-loader!../../examples/json.js');
+// import links from '../other/ProjectInfo.json';
+const links = require('../other/ProjectInfo.json');
 
 function CodeBox(props: React.PropsWithChildren<{
   header: string,
@@ -41,7 +46,7 @@ function CodeBox(props: React.PropsWithChildren<{
 }
 
 export default function MainPage() {
-  const bigScreen = useResponsiveWatcher();
+  const bigScreen = ResponsiveWatcher.useResponsiveWatcher();
 
   return (
     <Base>
