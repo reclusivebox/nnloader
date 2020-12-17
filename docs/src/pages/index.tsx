@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useContext} from 'react';
 import Base from '../templates/base';
-import {Box, Heading, Card, CardHeader, CardBody, Text} from 'grommet';
+import {Box, Heading, Card, CardHeader, CardBody, Text, ResponsiveContext} from 'grommet';
 import {Link} from 'gatsby';
 import {Github, Money, Link as LinkIcon} from 'grommet-icons';
 import QRCode from 'qrcode.react';
 
-// import {useResponsiveWatcher} from '../utils/responsiveWatcher';
-const ResponsiveWatcher = require('../utils/responsiveWatcher');
+import {useResponsiveWatcher} from '../utils/responsiveWatcher';
+// const ResponsiveWatcher = require('../utils/responsiveWatcher');
 
 import MarkdownCode from '../components/markdownCode';
 import {HomePageCard, CardButton} from '../components/homePageCard';
@@ -46,7 +46,10 @@ function CodeBox(props: React.PropsWithChildren<{
 }
 
 export default function MainPage() {
-  const bigScreen = ResponsiveWatcher.useResponsiveWatcher();
+  const bigScreen = useResponsiveWatcher();
+  // const bigScreen =
+  //   useContext(ResponsiveContext) === 'large' ||
+  //   useContext(ResponsiveContext) === 'xlarge';
 
   return (
     <Base>

@@ -40,8 +40,8 @@ function onCreateWebpackConfig({stage, loaders, actions}) {
       module: {
         rules: [
           {
-            test: /responsiveWatcher\.js/,
-            use: [loaders.null()],
+            test: /responsiveWatcher\.tsx/,
+            use: [loaders.null(), 'ts-loader'],
           },
         ],
       },

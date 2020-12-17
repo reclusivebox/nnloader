@@ -6,8 +6,8 @@ import {ResponsiveContext} from 'grommet';
 import {Link} from 'gatsby';
 import DynamicTopBar from './dynamicTopBar';
 
-// import {useResponsiveWatcher} from '../utils/responsiveWatcher';
-const ResponsiveWatcher = require('../utils/responsiveWatcher');
+import {useResponsiveWatcher} from '../utils/responsiveWatcher';
+// const ResponsiveWatcher = require('../utils/responsiveWatcher');
 
 import '../styles/headerBar.scss';
 const logo = require('../images/logo.svg');
@@ -24,8 +24,10 @@ function Entry(props: React.PropsWithChildren<{path: string}>) {
 }
 
 export default function HeaderBar() {
-  // const screenSize = useContext(ResponsiveContext);
-  const bigScreen = ResponsiveWatcher.useResponsiveWatcher();
+  // const bigScreen =
+  //   useContext(ResponsiveContext) === 'large' ||
+  //   useContext(ResponsiveContext) === 'xlarge';
+  const bigScreen = useResponsiveWatcher();
   const [currentLogo, setLogo] = useState(logo);
 
   const logoElement = (

@@ -6,7 +6,7 @@ export class ResponsiveWatcher {
 
   constructor(query = 'screen and (min-aspect-ratio: 4/3)') {
     this.callbackMap = new Map();
-    this.condition = matchMedia(query);
+    this.condition = window.matchMedia(query);
 
     this.condition.addEventListener('change', (event) => {
       const newState = (event.target as any).matches;
@@ -36,23 +36,27 @@ export class ResponsiveWatcher {
   }
 }
 
-const defaultWatcher = new ResponsiveWatcher();
+const defaultWatcher: any = (typeof window !== 'undefined')? new ResponsiveWatcher(): '';
 
 export function useResponsiveWatcher(customWatcher?: ResponsiveWatcher): boolean {
-  const watcher = customWatcher ?? defaultWatcher;
+    if(typeof window !== 'undefined') {
+      const watcher = customWatcher ?? defaultWatcher;
 
-  const callbackId = useState(Symbol())[0];
-  const [bigScreen, updateComponent] = useState(watcher.state);
+      const callbackId = useState(Symbol())[0];
+      const [bigScreen, updateComponent] = useState(watcher.state);
 
-  // Register Callback Effect
-  useEffect(() => {
-    watcher.registerCallback(callbackId, updateComponent);
-  }, [updateComponent])
+      // Register Callback Effect
+      useEffect(() => {
+        watcher.registerCallback(callbackId, updateComponent);
+      }, [updateComponent])
 
-  // Remove Callback Effect
-  useEffect(() => {
-    return () => watcher.removeCallback(callbackId);
-  }, [])
+      // Remove Callback Effect
+      useEffect(() => {
+        return () => watcher.removeCallback(callbackId);
+      }, [])
 
-  return bigScreen;
+      return bigScreen;
+    } else {
+      return false;
+    }
 }
