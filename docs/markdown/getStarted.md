@@ -24,4 +24,4 @@ The library can be easily installed with a package manager like yarn (`bash&yarn
 
 3. Use one of its functions.
 
-Kepp reading to know more.
+Keep reading to know more.
