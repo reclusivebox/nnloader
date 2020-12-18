@@ -11,7 +11,7 @@
     transition: transform 0.5s;
     @extend .zoom;
     * {
-        overflow-x: scroll;
+        overflow-x: auto;
     }
 }
 

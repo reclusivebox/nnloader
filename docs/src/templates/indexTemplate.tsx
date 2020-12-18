@@ -112,7 +112,6 @@ export default function MainPage() {
               background='light-1'
               pad='medium'
               align='center'
-              justify='center'
             >
               <CardButton
                 icon={Github}
