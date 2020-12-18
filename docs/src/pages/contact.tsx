@@ -41,7 +41,7 @@ export default function ContactPage() {
           <CardBody background='light-2' align='start' pad='large'>
             <p>Hello, I'm Bruno.</p>
             <p>
-              I'm an passionate developer who fell in love with almost all flavors of computer science from an early age.
+              I'm a passionate developer who fell in love with almost all flavors of computer science from an early age.
               I'm confident that I can bring a new perspective to almost any kind of project.
               If you have any software in need of some love, please contact me through one of the links below.
             </p>
