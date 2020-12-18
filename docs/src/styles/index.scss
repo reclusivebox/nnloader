@@ -1,4 +1,5 @@
 @use './base.scss' as Base;
+@use './utils.scss';
 
 .codeBox {
     width: min-content;
@@ -8,13 +9,9 @@
 
 .cardContainer {
     transition: transform 0.5s;
-}
-
-.cardContainer:hover {
-    transform: scale(1.05, 1.05);
-
-    @screen lg {
-        transform: scale(1.1, 1.1);
+    @extend .zoom;
+    * {
+        overflow-x: scroll;
     }
 }
 

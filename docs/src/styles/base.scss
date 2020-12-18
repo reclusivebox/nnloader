@@ -7,6 +7,10 @@
 @tailwind utilities;
 
 @layer base {
+    * {
+        font-weight: 400;
+    }
+
     p {
         padding: 1em;
         font-size: 18px;

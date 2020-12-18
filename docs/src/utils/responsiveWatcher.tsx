@@ -1,4 +1,3 @@
-import { string } from 'prop-types';
 import React, {useEffect, useState} from 'react';
 
 export class ResponsiveWatcher {

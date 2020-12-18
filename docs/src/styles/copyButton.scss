@@ -1,12 +1,10 @@
 @use './base.scss' as Base;
+@use './utils.scss' as Utils;
 
 .cardButton {
     transition: transform 0.3s;
     font-size: 20px;
-}
-
-.cardButton:hover {
-    transform: scale(1.05, 1.05);
+    @extend .zoom;
 }
 
 .cardButton:active {

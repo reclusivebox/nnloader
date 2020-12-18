@@ -6,6 +6,7 @@ import {Github, Money, Link as LinkIcon} from 'grommet-icons';
 import QRCode from 'qrcode.react';
 
 import {useResponsiveWatcher} from '../utils/responsiveWatcher';
+import DynamicFocuser from '../utils/dynamicFocus';
 // const ResponsiveWatcher = require('../utils/responsiveWatcher');
 
 import MarkdownCode from '../components/markdownCode';
@@ -22,6 +23,10 @@ const {default: bufferExample} = require('!!raw-loader!../../examples/buffer.js'
 const {default: jsonExample} = require('!!raw-loader!../../examples/json.js');
 // import links from '../other/ProjectInfo.json';
 const links = require('../other/ProjectInfo.json');
+const bitcoinIcon = require('../images/bitcoin.png');
+const ethereumIcon = require('../images/ethereum.png');
+const moneroIcon = require('../images/monero.png');
+const bitcoinCashIcon = require('../images/bitcoincash.png');
 
 function CodeBox(props: React.PropsWithChildren<{
   header: string,
@@ -53,6 +58,7 @@ export default function MainPage() {
 
   return (
     <Base>
+      {/* <DynamicFocuser /> */}
       <div className='pageGrid'>
         <Heading level={2}>Load almost anything</Heading>
         <Box
@@ -86,10 +92,10 @@ export default function MainPage() {
         </Box>
         <h2>More...</h2>
         <Box
-          direction='row'
+          direction={bigScreen? 'row':'column'}
           justify='start'
           pad='large'
-          gap='large'
+          gap='xlarge'
         >
           {/* Useful Links card */}
           <HomePageCard>
@@ -105,6 +111,8 @@ export default function MainPage() {
             <CardBody
               background='light-1'
               pad='medium'
+              align='center'
+              justify='center'
             >
               <CardButton
                 icon={Github}
@@ -136,7 +144,7 @@ export default function MainPage() {
               <CopyButton
                 label='Tip me with Bitcoin'
                 toCopy={links.bitcoin}
-                iconLink='https://cryptoicons.org/api/white/btc/100'
+                iconLink={bitcoinIcon}
               >
                 <Text>{'The address has been copied to your clipboard'}</Text>
                 <Text>{'If you prefer, you can also use the QR code below'}</Text>
@@ -146,7 +154,7 @@ export default function MainPage() {
               <CopyButton
                 label='Tip me with Ethereum'
                 toCopy={links.ethereum}
-                iconLink='https://cryptoicons.org/api/white/eth/100'
+                iconLink={ethereumIcon}
               >
                 <Text>{'The address has been copied to your clipboard'}</Text>
                 <Text>{'If you prefer, you can also use the QR code below'}</Text>
@@ -156,7 +164,7 @@ export default function MainPage() {
               <CopyButton
                 label='Tip me with Monero'
                 toCopy={links.monero}
-                iconLink='https://cryptoicons.org/api/white/xmr/100'
+                iconLink={moneroIcon}
               >
                 <Text>{'The address has been copied to your clipboard'}</Text>
                 <Text>{'If you prefer, you can also use the QR code below'}</Text>
@@ -166,7 +174,7 @@ export default function MainPage() {
               <CopyButton
                 label='Tip me with Bitcoin Cash'
                 toCopy={links.bch}
-                iconLink='https://cryptoicons.org/api/white/bch/100'
+                iconLink={bitcoinCashIcon}
               >
                 <Text>{'The address has been copied to your clipboard'}</Text>
                 <Text>{'If you prefer, you can also use the QR code below'}</Text>

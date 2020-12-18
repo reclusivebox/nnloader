@@ -51,6 +51,7 @@ export default function ContactPage() {
             pad='medium'
             gap='medium'
             align='center'
+            justify='center'
             wrap={true}
           >
 

@@ -1,4 +1,5 @@
 @use './base.scss' as Base;
+@use './utils.scss';
 
 .homePageCard {
     @screen lg {
@@ -9,8 +10,10 @@
         color: #666666;
     }
     transition: transform 0.3s;
+
+    @extend .zoom;
 }
 
-.homePageCard:hover {
-    transform: scale(1.05, 1.05);
+.cardButton {
+    max-width: max-content;
 }

@@ -1,0 +1,13 @@
+@use './base.scss' as Base;
+
+.zoom{
+    transition: transform 0.5s;
+    @media screen and (min-aspect-ratio: 4/3) {
+        &:hover {
+            transform: scale(1.05, 1.05);
+        }
+    }
+    &:focus-within {
+        transform: scale(1.08, 1.08)
+    }
+}
