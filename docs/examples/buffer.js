@@ -1,5 +1,0 @@
-const nnLoader = require('nnloader');
-
-async function main() {
-  const myFileContent = await nnLoader.loadBuffer('/files/someBinary');
-}
