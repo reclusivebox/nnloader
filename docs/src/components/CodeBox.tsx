@@ -13,7 +13,7 @@ export default function CodeBox(
   return (
     <ResponsiveEmbed aspectRatio="4by3">
       <Card className="bg-white rounded-5 w-100 h-auto p-3 shadow-sm overflow-auto">
-        Hello World!
+        <p className="text-danger">Hello World</p>
       </Card>
     </ResponsiveEmbed>
   );

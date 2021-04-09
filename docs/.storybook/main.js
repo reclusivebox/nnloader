@@ -31,6 +31,12 @@ module.exports = {
         ],
       },
     })
+    config.module.rules.push({
+      test: /\.s[ac]ss$/,
+      use: [
+        'style-loader', 'css-loader', 'fast-sass-loader'
+      ]
+    })
     return config
   },
 }

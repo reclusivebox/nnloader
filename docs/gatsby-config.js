@@ -25,7 +25,20 @@ module.exports = {
         background_color: `#8BC34A`,
         theme_color: `#8BC34A`,
         display: `minimal-ui`,
-        icon: `src/images/logoGreen.svg`,
+        icons: [
+          {
+            "src": "src/images/favicon.svg",
+            "type": "image/svg+xml",
+            "sizes": "512x512",
+            "purpose": "maskable"
+          },
+          {
+            "src": "src/images/faviconUnmasked.svg",
+            "type": "image/svg+xml",
+            "sizes": "512x512",
+            "purpose": "any"
+          }
+        ]
         // This path is relative to the root of the site.
       },
     },
