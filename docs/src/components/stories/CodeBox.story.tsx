@@ -8,9 +8,9 @@ export default {
 
 export function HelloWorldStory() {
     return (
-        <div className="bg-dark w-50 vh-100 p-4">
+        <div className="bg-dark w-75 vh-100 p-1">
             <CodeBox>
-                Hello World
+                {"const hello = function(){\n\tconsole.log('Hello World');\n}"}
             </CodeBox>
         </div>
     );
