@@ -1,3 +1,9 @@
 $primary: hsl(88,50,53);
 $secondary: hsl(88,0,53);
+$enable-shadows: true;
 @import '~bootstrap/scss/bootstrap';
+
+body {
+    @extend .min-vw-100;
+    @extend .min-vh-100;
+}

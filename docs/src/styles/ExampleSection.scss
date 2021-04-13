@@ -1,0 +1,10 @@
+@import './base.scss';
+
+.exampleSectionTitle {
+    border-left: solid $primary 5px;
+    padding-left: 1.8rem;
+}
+
+.exampleSectionContent {
+    padding-left: 1.8rem;
+}
