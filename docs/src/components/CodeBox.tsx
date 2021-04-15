@@ -3,8 +3,8 @@
 */
 import React from "react";
 import { Card, ResponsiveEmbed } from "react-bootstrap";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { xcode as theme } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
+import { ghcolors as theme } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 import "bootstrap/scss/bootstrap.scss";
 
@@ -19,6 +19,7 @@ export default function CodeBox(
       <SyntaxHighlighter
         language={props.language ?? "javascript"}
         style={theme}
+        customStyle={{border: '0px'}}
         wrapLines
         className="p-3"
       >

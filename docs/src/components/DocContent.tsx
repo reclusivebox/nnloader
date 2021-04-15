@@ -34,20 +34,6 @@ function DocListGroup(props: DocContentProps) {
   );
 }
 
-export function DocListPager(props: DocContentProps) {
-  return (
-    <Pagination>
-      {Object.entries(props.links).map(([title, link], index) => {
-        return (
-          <Pagination.Item key={index + 1} as={Link} to={link} active={title===props.activeItem}>
-            {index + 1}
-          </Pagination.Item>
-        );
-      })}
-    </Pagination>
-  );
-}
-
 export function DocListCard(props: DocContentProps) {
   return (
     <Card
