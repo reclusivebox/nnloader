@@ -2,7 +2,7 @@ import React from 'react';
 import { DocListCard } from '../DocContent';
 
 export default {
-    title: 'DocContent Card',
+    title: 'DocListCard',
     component: DocListCard
 };
 
