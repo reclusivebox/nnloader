@@ -8,7 +8,7 @@ import { Link } from "gatsby";
 import "../styles/base.scss";
 import "../styles/DocContent.scss";
 
-type LinkList = { [index: string]: string };
+type LinkList = Array<[number, string, string]>;
 type DocContentProps = React.PropsWithChildren<{
   links: LinkList;
   activeItem: string;
@@ -18,7 +18,7 @@ type DocContentProps = React.PropsWithChildren<{
 function DocListGroup(props: DocContentProps) {
   return (
     <ListGroup variant="flush">
-      {Object.entries(props.links).map(([title, link], index) => {
+      {props.links.map(([index, title, link]) => {
         return (
           <ListGroup.Item
             active={title === props.activeItem}
@@ -26,7 +26,7 @@ function DocListGroup(props: DocContentProps) {
             as={Link}
             to={link}
           >
-            <span className="h5 font-weight-light">{`${index + 1}. ${title}`}</span>
+            <span className="h5 font-weight-light">{`${index}. ${title}`}</span>
           </ListGroup.Item>
         );
       })}
