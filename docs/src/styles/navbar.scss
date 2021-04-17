@@ -1,0 +1,6 @@
+@import './base.scss';
+
+.primaryHover:hover {
+    @extend .text-primary;
+    @extend .font-weight-bold;
+}

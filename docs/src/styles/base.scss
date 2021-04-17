@@ -7,3 +7,11 @@ body {
     @extend .min-vw-100;
     @extend .min-vh-100;
 }
+
+p > code {
+    white-space: normal !important;
+}
+
+div > p {
+    text-indent: 2em;
+}

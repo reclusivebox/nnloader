@@ -2,14 +2,15 @@ import React from 'react';
 import {Navbar, Nav} from 'react-bootstrap';
 import {Link} from 'gatsby';
 
-const logo = require('../images/logoGreen.svg');
+import logo from '../images/logoGreen.svg';
+import '../styles/navbar.scss';
 
 type NavLinksProps = React.PropsWithChildren<{links: {[title: string]: string}}>;
 export function NavLinks(props: NavLinksProps) {
     return (
         <Nav>
             {Object.entries(props.links).map(([title, link]) => {
-                return <Nav.Link as={Link} to={link}>{title}</Nav.Link>;
+                return <Nav.Link className="primaryHover" key={title+link} as={Link} to={link}>{title}</Nav.Link>;
             })}
         </Nav>
     );
@@ -18,9 +19,9 @@ export function NavLinks(props: NavLinksProps) {
 export default function ProjectNavbar() {
     const links = {
         'Installation': '/docs/start',
-        'Buffers': '/docs/buffer',
+        'Strings': '/docs/strings',
         'JSON': '/docs/json',
-        'Strings': '/docs/strings'
+        'Buffers': '/docs/buffer',
     };
     return (
         <Navbar bg="light" expand="md">
