@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@types/react-helmet": "^6.1.1",
     "babel-preset-react-app": "^10.0.0",
     "bootstrap": "^4.6.0",
     "fast-sass-loader": "^2.0.0",
@@ -24,6 +25,7 @@
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.5.2",
+    "react-bootstrap-icons": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-syntax-highlighter": "^15.4.3",

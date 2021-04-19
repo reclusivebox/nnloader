@@ -5,7 +5,7 @@ import Template from '../templates/DefaultPage';
 
 export default function(){
     return (
-        <Template>
+        <Template pageTitle="nnLoader">
             
         </Template>
     );
