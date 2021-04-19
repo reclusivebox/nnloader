@@ -1,6 +1,13 @@
 @import './base.scss';
 
-.primaryHover:hover {
-    @extend .text-primary;
-    @extend .font-weight-bold;
+.primaryHover {
+    &:hover:not(.active) {
+        @extend .font-weight-bold;
+        @extend .text-primary;
+    }
+    &.active {
+        @extend .text-white;
+        @extend .font-weight-bold;
+        @extend .px-2;
+    }
 }

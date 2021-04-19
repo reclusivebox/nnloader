@@ -52,7 +52,7 @@ export default function DocPage(props: DocPageProps) {
   const active = props.data.markdownRemark.frontmatter.title;
 
   return (
-    <Template>
+    <Template pageTitle={'nnLoader | ' + active} activeNavId={props.data.markdownRemark.frontmatter.path}>
       <div className="mx-2 mx-md-5">
         <DocContent links={entries} activeItem={active}>
           <div dangerouslySetInnerHTML={{__html: props.data.markdownRemark.html}} />
