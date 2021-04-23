@@ -15,12 +15,12 @@ export default function CodeBox(
   }>
 ) {
   return (
-    <Card className="shadow-sm h-auto p-2">
+    <Card className="shadow-sm h-auto p-2 rounded-lg">
       <SyntaxHighlighter
         language={props.language ?? "javascript"}
         style={theme}
         customStyle={{border: '0px'}}
-        wrapLines
+        wrapLongLines
         className="p-3"
       >
         {props.children}

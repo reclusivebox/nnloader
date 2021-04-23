@@ -1,17 +1,19 @@
-$primary: hsl(88,50,53);
-$secondary: hsl(88,0,53);
+$primary: #8BC34A;
+$secondary: #878787;
 $enable-shadows: true;
 @import '~bootstrap/scss/bootstrap';
-
-body {
-    @extend .min-vw-100;
-    @extend .min-vh-100;
-}
 
 p > code {
     white-space: normal !important;
 }
 
-div > p {
-    text-indent: 2em;
+:not(code) div > p {
+    text-indent: 1em;
+    &:not(.lead) {
+        text-indent: 2em;
+    }
+}
+
+* {
+    transition: all 0.5s;
 }

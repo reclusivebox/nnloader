@@ -38,7 +38,7 @@ export default function ProjectNavbar(props: {activeNavId?: string}) {
     Buffers: "/docs/buffer",
   };
   return (
-    <Navbar bg="light" expand="md">
+    <Navbar bg="light" expand="md" className="shadow-sm">
       <Navbar.Brand href="/">
         <img
           className="img-fluid"

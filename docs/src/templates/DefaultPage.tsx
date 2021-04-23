@@ -2,6 +2,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Navbar from "../components/Navbar";
+import Footer from '../components/Footer';
 
 import "../styles/base.scss";
 
@@ -22,8 +23,13 @@ export default function (props: PageTemplateProps) {
         <meta name="keywords" content={['nnloader', 'javascript', 'node', 'load', 'package'].concat(props.keywords ?? []).join(', ')} />
         <meta name="description" content={props.description ?? 'Load files from your package\'s root efortlessly!'} />
       </Helmet>
-      <Navbar activeNavId={props.activeNavId} />
-      {props.children}
+      <div className="min-vh-100 p-0 m-0">
+        <Navbar activeNavId={props.activeNavId} />
+        <main className="px-1 py-5 p-lg-5">
+          {props.children}
+        </main>
+        <Footer />
+      </div>
     </>
   );
 }

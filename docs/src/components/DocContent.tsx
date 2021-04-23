@@ -12,7 +12,7 @@ import {
   Button,
 } from "react-bootstrap";
 import { Link } from "gatsby";
-import { ArrowLeft as Left, ArrowRight as Right } from "react-bootstrap-icons";
+import { ChevronLeft as Left, ChevronRight as Right } from "react-bootstrap-icons";
 
 import "../styles/base.scss";
 import "../styles/DocContent.scss";
@@ -109,12 +109,10 @@ export function DocContent(props: DocContentProps) {
           <DocListCard links={props.links} activeItem={props.activeItem} />
         </Col>
         <Col xs={12} lg={8}>
-          <div className="min-vh-100">
             {props.children}
             <Row className="justify-content-around mt-5">
               <DocPager {...props} />
             </Row>
-          </div>
         </Col>
       </Row>
     </Container>

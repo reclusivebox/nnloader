@@ -1,0 +1,10 @@
+@import './base.scss';
+
+.HCBHeader {
+    border-left: solid 0.1em $primary;
+}
+
+.ExpandOnHover:hover {
+    transform: scale(1.1);
+    text-decoration: none !important;
+}

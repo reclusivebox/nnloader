@@ -6,7 +6,7 @@ import Template from './DefaultPage';
 import "../../node_modules/prism-themes/themes/prism-ghcolors.css";
 
 export const query = graphql`
-  query MyQuery($id: Int) {
+  query MarkdownQuery($id: Int) {
     markdownRemark(frontmatter: { id: { eq: $id } }) {
       html
       frontmatter {
