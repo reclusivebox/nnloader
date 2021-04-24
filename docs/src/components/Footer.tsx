@@ -123,13 +123,13 @@ function UsefulLinks() {
       <h3 className="m-2 mb-4">Useful Links</h3>
       <ListGroup variant="flush">
         <ListGroup.Item className="bg-dark" action>
-          <Button variant="plain" href="https://github.com/reclusivebox/nnloader" className="text-white d-flex flex-row align-items-baseline">
+          <Button variant="plain" href="https://github.com/reclusivebox/nnloader" target="_blank" className="text-white d-flex flex-row align-items-baseline">
             <Github className="mr-2" />
             Contribute on Github
           </Button>
         </ListGroup.Item>
         <ListGroup.Item className="bg-dark" action>
-          <Button variant="plain" href="https://www.linkedin.com/in/bruno-greg%C3%B3rio-694390175/" className="text-white d-flex flex-row align-items-baseline">
+          <Button variant="plain" href="https://www.linkedin.com/in/bruno-greg%C3%B3rio-694390175/" target="_blank" className="text-white d-flex flex-row align-items-baseline">
             <Linkedin className="mr-2" />
             Follow me on Linkedin
           </Button>

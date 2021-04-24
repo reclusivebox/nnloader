@@ -39,7 +39,7 @@ export default function ProjectNavbar(props: {activeNavId?: string}) {
   };
   return (
     <Navbar bg="light" expand="md" className="shadow-sm">
-      <Navbar.Brand href="/">
+      <Navbar.Brand as={Link} to="/">
         <img
           className="img-fluid"
           style={{ height: "3em" }}
