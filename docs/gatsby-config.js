@@ -1,9 +1,12 @@
+const path = require("path");
+
 module.exports = {
   siteMetadata: {
     title: `nnLoader`,
     description: `The easiest way to load files from your package root.`,
     author: `Bruno Gregório`,
   },
+  pathPrefix: "/nnloader",
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
@@ -67,5 +70,11 @@ module.exports = {
     },
     "gatsby-plugin-typescript",
     "gatsby-plugin-sass",
+    {
+      resolve: "gatsby-plugin-purgecss",
+      options: {
+        purgeOnly: ["node_modules/bootstrap"],
+      },
+    },
   ],
 };
