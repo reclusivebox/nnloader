@@ -5,6 +5,7 @@ module.exports = {
     title: `nnLoader`,
     description: `The easiest way to load files from your package root.`,
     author: `Bruno Gregório`,
+    siteUrl: 'https://reclusivebox.github.io/nnloader',
   },
   pathPrefix: "/nnloader",
   plugins: [
@@ -76,5 +77,7 @@ module.exports = {
         purgeOnly: ["node_modules/bootstrap"],
       },
     },
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt',
   ],
 };
