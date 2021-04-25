@@ -1,10 +1,10 @@
-@import './base.scss';
+@import '../base.scss';
 
-.HCBHeader {
+.header {
     border-left: solid 0.1em $primary;
 }
 
-.ExpandOnHover:hover {
+.expandOnHover:hover {
     transform: scale(1.1);
     text-decoration: none !important;
 }

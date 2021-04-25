@@ -1,0 +1,11 @@
+@import "../base.scss";
+
+.fixButton {
+    &:hover {
+        color: white !important;
+        @extend .font-weight-bold;
+    }
+    * {
+        transition: none;
+    }
+}

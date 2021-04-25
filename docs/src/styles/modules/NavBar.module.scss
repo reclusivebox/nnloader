@@ -1,0 +1,8 @@
+@import "../base.scss";
+
+.highlightOnHover {
+    @extend .text-white;
+    &:hover {
+        @extend .font-weight-bold;
+    }
+}

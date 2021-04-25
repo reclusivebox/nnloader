@@ -6,7 +6,7 @@ import { Card, ResponsiveEmbed } from "react-bootstrap";
 import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
 import { ghcolors as theme } from "react-syntax-highlighter/dist/esm/styles/prism";
 
-import "bootstrap/scss/bootstrap.scss";
+import "../styles/base.scss";
 
 export default function CodeBox(
   props: React.PropsWithChildren<{

@@ -3,7 +3,10 @@ import { Navbar, Nav } from "react-bootstrap";
 import { Link } from "gatsby";
 
 import logo from "../images/logoGreen.svg";
-import "../styles/navbar.scss";
+// import "../styles/navbar.scss";
+
+import "../styles/base.scss";
+import {highlightOnHover} from '../styles/modules/NavBar.module.scss';
 
 type NavLinksProps = React.PropsWithChildren<{
   links: { [title: string]: string },
@@ -16,7 +19,7 @@ export function NavLinks(props: NavLinksProps) {
         return (
             <Nav.Item key={title + link}>
                 <Nav.Link
-                    className="primaryHover"
+                    className={`${highlightOnHover}`}
                     as={Link}
                     to={link}
                     eventKey={link}
@@ -38,7 +41,7 @@ export default function ProjectNavbar(props: {activeNavId?: string}) {
     Buffers: "/docs/buffer",
   };
   return (
-    <Navbar bg="light" expand="md" className="shadow-sm">
+    <Navbar bg="dark" variant="dark" expand="md" className="shadow-sm">
       <Navbar.Brand as={Link} to="/">
         <img
           className="img-fluid"

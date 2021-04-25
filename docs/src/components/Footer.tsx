@@ -3,7 +3,9 @@ import { Container, Row, ListGroup, Modal, Button, OverlayTrigger, Tooltip, Col 
 import { Clipboard, Github, Linkedin } from "react-bootstrap-icons";
 import QRCode from "qrcode.react";
 
-import "../styles/footer.scss";
+// import "../styles/footer.scss";
+import "../styles/base.scss";
+import {fixButton} from "../styles/modules/Footer.module.scss";
 
 import Monero from "../images/cryptoIcons/xmr.svg";
 import Bitcoin from "../images/cryptoIcons/btc.svg";
@@ -27,7 +29,7 @@ function TextWithCopyButton(props: { children: string }) {
       <OverlayTrigger overlay={tooltip} trigger='click' placement="top">
         <Button
             variant="outline-primary"
-            className="fixButton"
+            className={`${fixButton}`}
             onClick={handleClick}
         >
             <Clipboard className="mr-2" />
@@ -72,7 +74,7 @@ function CurrencyButton(props: { currency: Currency }) {
         <TextWithCopyButton>{props.currency[2]}</TextWithCopyButton>
           <Button
             variant="outline-primary"
-            className="fixButton"
+            className={`${fixButton}`}
             onClick={closeModal}
           >
             Done

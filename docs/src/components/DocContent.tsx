@@ -15,7 +15,6 @@ import { Link } from "gatsby";
 import { ChevronLeft as Left, ChevronRight as Right } from "react-bootstrap-icons";
 
 import "../styles/base.scss";
-import "../styles/DocContent.scss";
 
 type LinkList = Array<[number, string, string]>;
 type DocContentProps = React.PropsWithChildren<{
