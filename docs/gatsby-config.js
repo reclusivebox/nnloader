@@ -51,7 +51,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
-        short_name: `starter`,
+        short_name: `nnLoader`,
         start_url: `/`,
         background_color: `#8BC34A`,
         theme_color: `#8BC34A`,
