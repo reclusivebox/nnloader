@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://reclusivebox.github.io/sitemap.xml
+Host: https://reclusivebox.github.io
