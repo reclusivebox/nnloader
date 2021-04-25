@@ -8,12 +8,13 @@ p > code {
 }
 
 :not(code) div > p {
-    text-indent: 1em;
-    &:not(.lead) {
-        text-indent: 2em;
-    }
+    text-indent: 3ch;
 }
 
 * {
     transition: all 0.5s;
+}
+
+nav .active {
+    @extend .px-2;
 }
