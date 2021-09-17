@@ -17,7 +17,7 @@ describe('Find the package directory from different places', () => {
     assert.equal(message, 'Hello World\n');
   });
 
-  it.only('Test error Stack', function() {
+  it.skip('Test error Stack', function() {
     console.log('Path Returned: ' + getCallerDir());
   });
 });
