@@ -1,12 +1,14 @@
 import {assert} from 'chai';
-import nnloader from '../dist/index';
+import {createLoader} from '../dist/index';
 import path from 'path';
 import {describe, it} from 'mocha';
 import {getCallerDir, getPackageDir} from '../src/common';
 
+const nnloader = createLoader(0);
+
 describe('Find the package directory from different places', () => {
   it('Find the package directory from here.', async () => {
-    const resultDir = await getPackageDir(__dirname);
+    const resultDir = getPackageDir(__dirname, 0);
     assert.equal(resultDir, path.resolve(__dirname + '/..'));
   });
 

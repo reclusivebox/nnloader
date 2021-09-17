@@ -1,5 +1,7 @@
 import {assert} from 'chai';
-import nnloader from '../dist/index';
+import {createLoader} from '../dist/index';
+
+const nnloader = createLoader(0);
 
 describe('Testing the json module', () => {
   it('Load /test/test.json', async () => {

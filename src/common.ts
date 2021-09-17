@@ -1,5 +1,5 @@
 import path from 'path';
-import {promises as fs} from 'fs';
+import fs from 'fs';
 
 /**
  * Error that hapens when you use this library outside a package scope.
@@ -37,31 +37,45 @@ export class InvalidCallerError extends Error {
   }
 }
 
-export type EncodingOptions = 'ascii' | 'utf8' | 'utf-8' | 'utf16le' | 'ucs2' |
-  'ucs-2' | 'base64' | 'latin1' | 'binary' | 'hex';
+export type EncodingOptions =
+  | 'ascii'
+  | 'utf8'
+  | 'utf-8'
+  | 'utf16le'
+  | 'ucs2'
+  | 'ucs-2'
+  | 'base64'
+  | 'latin1'
+  | 'binary'
+  | 'hex';
 
 /**
  * Returns the absolute path to the directory containing the package.json file.
  * @param {string} dirname - The directory containing the file calling this
  *  function, aways use the node variable __diname.
  */
-export async function getPackageDir(dirname: string): Promise<string> {
-  // Check for nullish dirname
-  dirname ?? (() => {
-    throw new InvalidPathError();
-  })();
-
+export function getPackageDir(
+  dirname: string,
+  nestingLevel: number = 1,
+): string {
   // Check if we reached the end of the filesystem
   if (dirname === '/') {
     throw new NoPackageError();
   }
 
-  const files: Array<string> = await fs.readdir(dirname);
+  const files = fs.readdirSync(dirname);
 
   if (files.includes('package.json')) {
-    return dirname;
+    if (nestingLevel < 1) {
+      return dirname;
+    } else {
+      return getPackageDir(
+        path.resolve(dirname + '/..'),
+        nestingLevel - 1
+      );
+    }
   } else {
-    return await getPackageDir(path.resolve(dirname + '/..'));
+    return getPackageDir(path.resolve(dirname + '/..'), nestingLevel);
   }
 }
 
@@ -70,7 +84,7 @@ export async function getPackageDir(dirname: string): Promise<string> {
  * @param {number} toIgnore - The number of stack members to ignore.
  * @return {string} - The caller's source dir.
  */
-export function getCallerDir(toIgnore = 2) {
+export function getCallerDir() {
   let rawStack: string;
 
   try {
@@ -79,19 +93,23 @@ export function getCallerDir(toIgnore = 2) {
     rawStack = (someError as Error).stack ?? '';
   }
 
-  const regex = /at (?<caller>\S+) \((?<path>.+):\d+:\d+\)/gm;
+  const regex = /at (async\s)?\S+ \(?(?<path>\/[\w\-\/\.]+)\)?/gm;
   const matches = Array.from(rawStack.matchAll(regex));
 
-  const pathRegex = /^\/(?<fullPath>.+\/)/;
-  const validPaths = matches
-      .filter((item) => pathRegex.test(item.groups?.path ?? 'invalid'))
-      .map((item) => {
-        return (
-          '/' + item.groups?.path?.match(pathRegex)?.groups?.fullPath ?? ''
-        );
-      });
+  const paths = matches.map((item) => item.groups?.path);
 
-  return validPaths[toIgnore - 1] ?? (() => {
+  if (paths.length < 1) {
     throw new InvalidCallerError();
-  });
+  }
+
+  const pathSegments = (paths[0] as string).split('/');
+
+  const pathSegmentsWithoutFile = pathSegments.slice(
+    0,
+    pathSegments.length - 1,
+  );
+
+  const toReturn = path.resolve('/', ...pathSegmentsWithoutFile);
+
+  return toReturn;
 }

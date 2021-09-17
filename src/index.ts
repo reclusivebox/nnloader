@@ -1,7 +1,6 @@
-import {loadString} from './stringLoader';
-import {loadJSON} from './jsonLoader';
-import {loadBuffer} from './binaryLoader';
+import {Loader, createLoader} from './Loader';
+export {createLoader, createLoaderWithPath, Loader} from './Loader';
 
-const nnLoader = {loadString, loadJSON, loadBuffer};
+const nnLoader = createLoader();
 
 export default nnLoader;

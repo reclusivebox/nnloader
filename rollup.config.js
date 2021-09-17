@@ -6,7 +6,7 @@ export default {
   output: {
     dir: 'dist',
     format: 'cjs',
-    exports: 'default',
+    exports: 'auto',
   },
   plugins: [
     typescript({tsconfigOverride: {

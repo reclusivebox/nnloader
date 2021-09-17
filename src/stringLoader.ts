@@ -27,6 +27,6 @@ export async function loadString(
   const moduleDir = getCallerDir();
 
   const finalPath = path.join(await getPackageDir(moduleDir), pathToFile);
-  const fileString: string = await fs.readFile(finalPath, {encoding: encoding});
+  const fileString: string = await fs.readFile(finalPath, encoding);
   return fileString;
 }

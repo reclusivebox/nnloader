@@ -1,5 +1,7 @@
 import {assert} from 'chai';
-import nnloader from '../dist/index';
+import {createLoader} from '../dist/index';
+
+const nnloader = createLoader(0);
 
 describe('Testing the binary module', () => {
   it('Load /test/someBinary', async () => {
