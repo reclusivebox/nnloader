@@ -76,7 +76,8 @@ export function getCallerDir(toIgnore = 2) {
   try {
     throw new Error();
   } catch (someError) {
-    rawStack = someError.stack;
+    rawStack = (someError as Error).stack ?? '';
+    console.log(rawStack);
   }
 
   const regex = /at (?<caller>\S+) \((?<path>.+):\d+:\d+\)/gm;
@@ -91,7 +92,7 @@ export function getCallerDir(toIgnore = 2) {
         );
       });
 
-  return validPaths[toIgnore] ?? (() => {
+  return validPaths[toIgnore - 1] ?? (() => {
     throw new InvalidCallerError();
   });
 }
